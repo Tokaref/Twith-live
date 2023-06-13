@@ -1,7 +1,7 @@
 
 # Twith-live !
 
-Twith-live est un script qu'il vous permet d'envoyer un message sur votre serveur discord quand vous êtes en stream ou que votre streamer choisi est en stream avec un webhook discord,Il suffit s'implement de remplacer le nom du streamer ou si vous voulez le message envoyer par le webhook discord , Le script est souvent mis à jours.
+Twith-live est un script qu'il vous permet d'envoyer une notif sur votre serveur discord quand il lance son stream ou que votre streamer choisi lance son stream avec un webhook discord,Il suffit s'implement de remplacer le nom du streamer ou si vous voulez le message envoyer par le webhook discord et de laisser tourner le script, Le script est souvent mis à jours.
 
 ## Utilisation du programme
 
