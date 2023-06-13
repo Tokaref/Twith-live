@@ -66,12 +66,10 @@ def verif_live_discord():
             else:
                 if res.status_code == 200:
                     if "live_user" in str(res.content):
-                        sleep(1)
                         verif_live_discord()
                     else:
                         if res.status_code == 200:
                             if "live_user" in str(res.content):
-                                sleep(1)
                                 verif_live_discord()
                         else:
                             print(Fore.LIGHTRED_EX + "Probleme au niveau de la requêtes 200 ")
@@ -80,8 +78,3 @@ def verif_live_discord():
                     print(Fore.LIGHTRED_EX + "Probleme au niveau de la requêtes 200 ")
                     live_site()
 live_site()
-
-
-
-
-
