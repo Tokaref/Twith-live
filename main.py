@@ -1,20 +1,10 @@
 import os
-import random
-import string
-import colorama
-import pystyle
-import requests
-from pystyle import Colors
 from time import sleep
-import threading
-from colorama import Fore
 import colorama
-from termcolor import colored
-from discord import SyncWebhook
+import requests
 from colorama import Fore
-from discord.ext import commands
-import json
-colorama.init(autoreset=True) 
+
+colorama.init(autoreset=True)
 
 os.system("title No-Name")
 
@@ -22,10 +12,10 @@ ROOT_PATH = os.chdir(os.path.dirname(os.path.abspath(__file__)))
 
 class start():
     def __init__(self):
-        name_twith = f"your_name"
-        ur_message = f"**your_message**"
+        name_twith = f"papesan"
+        ur_message = f"**@everyone petit stream chill**"
         link = f"https://www.twitch.tv/{name_twith}"
-        webhook = "your_webhooks"
+        webhook = "https://discord.com/api/webhooks/1118105377565835284/M0OiPktamV8Ddq4jqOwO7WxZ7elBUwhX5XviFpDWYu3_y8LWJerdHmuJe5Yn7HYtSdTt"
         self.name_twith = name_twith
         self.ur_message = ur_message
         self.link = link
@@ -51,7 +41,7 @@ def webhook():
     
 def live_site():
     while True:
-        sleep(1)
+        sleep(3)
         res = requests.get("https://www.twitch.tv/" + '{}'.format(h1.name_twith))
         if res.status_code == 200:
             if "live_user" in str(res.content):
@@ -68,17 +58,27 @@ def live_site():
 
 def verif_live_discord():
     while True:
-        sleep(1)
+        sleep(3)
         res = requests.get("https://www.twitch.tv/" + '{}'.format(h1.name_twith))
         if res.status_code == 200:
             if "live_user" in str(res.content):
                 verif_live_discord()
             else:
-                print(Fore.LIGHTGREEN_EX + "L'utilisateur selectionné n'est plus en stream")
-                live_site()
-        else:
-            print(Fore.LIGHTRED_EX + "Probleme au niveau de la requêtes 200 ")
-            live_site()
+                if res.status_code == 200:
+                    if "live_user" in str(res.content):
+                        sleep(1)
+                        verif_live_discord()
+                    else:
+                        if res.status_code == 200:
+                            if "live_user" in str(res.content):
+                                sleep(1)
+                                verif_live_discord()
+                        else:
+                            print(Fore.LIGHTRED_EX + "Probleme au niveau de la requêtes 200 ")
+                            live_site()
+                else:  
+                    print(Fore.LIGHTRED_EX + "Probleme au niveau de la requêtes 200 ")
+                    live_site()
 live_site()
 
 
