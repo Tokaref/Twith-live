@@ -11,7 +11,7 @@ Avant de lancer le programme, vous devez configurer les paramètres dans le fich
 
 - `"webhooks"` : le webhooks dans la classe Start à remplacer par le votre pour recevoir le message embed
 - `"name_twith "` : le nom twith dans la classe Start qui doit être remplacé par le nom de votre twith ou streamer 
-- `"ur_message "` : le contenue de votre message , ce que vous voulez envoyer quand vous livez ou que le streamer live
+- `"ur_message "` : le contenue de votre message , qui doit être remplacé par votre message 
 
 Vous devez remplir les champs correspondants dans le fichier `main.py` avant d'exécuter le programme.
 
