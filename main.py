@@ -12,10 +12,10 @@ ROOT_PATH = os.chdir(os.path.dirname(os.path.abspath(__file__)))
 
 class start():
     def __init__(self):
-        name_twith = f"papesan"
-        ur_message = f"**@everyone petit stream chill**"
+        name_twith = f"your_name"
+        ur_message = f"**your_message**"
         link = f"https://www.twitch.tv/{name_twith}"
-        webhook = "https://discord.com/api/webhooks/1118105377565835284/M0OiPktamV8Ddq4jqOwO7WxZ7elBUwhX5XviFpDWYu3_y8LWJerdHmuJe5Yn7HYtSdTt"
+        webhook = "your_webhook"
         self.name_twith = name_twith
         self.ur_message = ur_message
         self.link = link
