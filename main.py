@@ -3,6 +3,8 @@ from time import sleep
 import colorama
 import requests
 from colorama import Fore
+import threading
+import sys
 
 colorama.init(autoreset=True)
 
@@ -12,10 +14,10 @@ ROOT_PATH = os.chdir(os.path.dirname(os.path.abspath(__file__)))
 
 class start():
     def __init__(self):
-        name_twith = f"your_name"
-        ur_message = f"**your_message**"
+        name_twith = f"jokaa45"
+        ur_message = f"**@everyone live :) chill**"
         link = f"https://www.twitch.tv/{name_twith}"
-        webhook = "your_webhook"
+        webhook = "https://discord.com/api/webhooks/1118105377565835284/M0OiPktamV8Ddq4jqOwO7WxZ7elBUwhX5XviFpDWYu3_y8LWJerdHmuJe5Yn7HYtSdTt"
         self.name_twith = name_twith
         self.ur_message = ur_message
         self.link = link
@@ -41,7 +43,7 @@ def webhook():
     
 def live_site():
     while True:
-        sleep(3)
+        sleep(2)
         res = requests.get("https://www.twitch.tv/" + '{}'.format(h1.name_twith))
         if res.status_code == 200:
             if "live_user" in str(res.content):
@@ -58,7 +60,7 @@ def live_site():
 
 def verif_live_discord():
     while True:
-        sleep(3)
+        sleep(2)
         res = requests.get("https://www.twitch.tv/" + '{}'.format(h1.name_twith))
         if res.status_code == 200:
             if "live_user" in str(res.content):
@@ -77,4 +79,30 @@ def verif_live_discord():
                 else:  
                     print(Fore.LIGHTRED_EX + "Probleme au niveau de la requêtes 200 ")
                     live_site()
-live_site()
+
+def bloque_site():
+    while True:
+        sleep(6)
+        res = requests.get("https://www.twitch.tv")
+        if res.status_code == 200:
+            bloque_site()
+        else:
+           sleep(1)
+           if res.status_code == 200:
+                bloque_site()
+           else:
+                print(Fore.LIGHTRED_EX + "REQUETE BLOQUE, USE VPN")
+                sys.exit()
+
+class Threading:
+    def __init__(self):
+        threading.Thread(target=live_site).start()
+        threading.Thread(target=bloque_site).start()
+Threading()
+
+
+
+
+
+
+
